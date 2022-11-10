@@ -1,0 +1,72 @@
+/* Mobile First */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Helvetica", sans-serif;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+}
+
+nav {
+  display: none;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-block: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  line-height: 1.8;
+}
+
+#toggle-nav {
+  all: unset;
+}
+
+#toggle-nav:checked ~ nav {
+  display: block;
+}
+
+.close {
+  display: none;
+}
+
+#toggle-nav:checked + label > .open {
+  display: none;
+}
+
+#toggle-nav:checked + label > .close {
+  display: inline;
+}
+
+.sr-only {
+  font-size: 0;
+  position: absolute;
+  top: -1000%;
+}
+
+@media screen and (min-width: 768px) {
+  #toggle-nav,
+  label {
+    display: none;
+  }
+
+  nav {
+    display: block;
+  }
+
+  li {
+    display: inline;
+    padding-inline: 2rem;
+  }
+}
